@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "47287564492",
+    "project_id": "moodbanco",
+    "storage_bucket": "moodbanco.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47287564492:android:d1bf179a6039ece0d4aa69",
+        "android_client_info": {
+          "package_name": "com.moodbanco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47287564492-vfsad8hhdkvkbcs9d6lr25i6t8miu9ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrodtkEW0pLKYeER8XHw8YbQ1W9HdGjoo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47287564492-vfsad8hhdkvkbcs9d6lr25i6t8miu9ac.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "47287564492-bvfp3u12glfisfpqlsms0efd9e2f7pag.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.moodbanco"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
