@@ -1,0 +1,16 @@
+{
+    "translation": {
+        "WelcomeMessage": "Welcome!",
+        "MainScreen": "How are you feeling today?",
+        "PlenoScreen": "Glad you're perfect. Can't get any better!",
+        "FelizScreen": "Let's be happy because it's good for your health.",
+        "NeutroScreen": "I'm not happy or sad, there is no definition. I'm just living for no reason.",
+        "TristeScreen": "Don't be sad, everything will get better.",
+        "PessimoScreen": "Nobody can be strong all the time.",
+        "FeedbackPositivo": "Share your happiness with us. Click bellow to send us a message.",
+        "FeedbackNegativo": "Can we help you with something? Send us a message by clicking bellow, or go back to the main screen.",
+        "FeedbackRecebido": "We received the following feedback:",
+        "Placeholder": "Type your message",
+        "ArchiveScreen": "Saved feedback:"
+    }
+}

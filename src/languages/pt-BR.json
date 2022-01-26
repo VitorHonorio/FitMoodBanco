@@ -1,0 +1,16 @@
+{
+    "translation": {
+        "WelcomeMessage": "Seja bem-vindo!",
+        "MainScreen": "Como você está se sentindo hoje?",
+        "PlenoScreen": "Que bom que você está pleno! Não tem como melhorar!",
+        "FelizScreen": "Bora ser feliz porque faz bem para a saúde.",
+        "NeutroScreen": "Não estou feliz e nem triste, não há definição. Estou apenas vivendo sem razão.",
+        "TristeScreen": "Não fique triste, tudo vai melhorar.",
+        "PessimoScreen": "Ninguém consegue ser forte o tempo todo.",
+        "FeedbackPositivo": "Compartilhe sua felicidade conosco. Clique abaixo para nos enviar uma mensagem.",
+        "FeedbackNegativo": "Podemos te ajudar em algo? Nos envie uma mensagem clicando abaixo, ou volte para a tela principal.",
+        "FeedbackRecebido": "Recebemos o seguinte feedback:",
+        "Placeholder": "Digite sua mensagem.",
+        "ArchiveScreen": "Feedback salvo:"
+    }
+}

@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SignupScreen from '../screens/SignupScreen';
 import LoginScreen from '../screens/LoginScreen';
-import OnboardingScreen from '../screens/OnboardingScreen';
+
 
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -29,19 +29,13 @@ const AuthStack = () => {
 
     if (isFirstLaunch === null) {
         return null ;
-    } else if (isFirstLaunch == true) {
-        routeName = 'Onboarding';
-    } else {
+    }  else {
         routeName = 'Login';
     } 
 
     return (
         <Stack.Navigator initialRouteName={routeName}>
-            <Stack.Screen
-              name='Onboarding'
-              component={OnboardingScreen}
-              options={{header: () => null}}
-            />
+           
             <Stack.Screen
               name='Login'
               component={LoginScreen}

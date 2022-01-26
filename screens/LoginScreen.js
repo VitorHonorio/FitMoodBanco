@@ -95,12 +95,12 @@ flex:1,
 alignItems: "center",
 justifyContent: "center",
 width: "90%",
-paddingBottom: 200,//////////////////////////
+paddingBottom: 50,//////////////////////////
 },
 input:{
 backgroundColor: "#FFF",
 width: "100%",
-marginBottom:10,
+marginBottom:0,
 fontSize: 17,
 borderRadius: 7,
 padding: 10,
