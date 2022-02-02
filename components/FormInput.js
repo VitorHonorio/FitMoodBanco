@@ -2,15 +2,12 @@ import React from "react";
 import { View, TextInput, StyleSheet, KeyboardAvoidingView } from 'react-native';
 import { windowHeight, windowWidth } from "../utils/Dimentions";
 
-import AntDesign from 'react-native-vector-icons/AntDesign';
-
 const FormInput = ({labelValue, placeholderText, iconType, ...rest}) => {
     return (
       <KeyboardAvoidingView>
         <View styles={styles.inputContainer}>
            <View style={styles.iconStyle}>
-     
-       
+
       </View>
           <TextInput 
               value={labelValue}
@@ -58,7 +55,6 @@ const styles = StyleSheet.create({
         color: '#333',
         justifyContent: 'center',
         alignItems: 'center',
-        
         
       },
       inputField: {

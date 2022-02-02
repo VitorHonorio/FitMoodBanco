@@ -9,7 +9,7 @@ import { TristeScreen } from "../views/TristeScreen";
 import { PessimoScreen } from "../views/PessimoScreen";
 import { FelizScreen } from "../views/FelizScreen";
 import { ArquivoScreen } from "../views/ArquivoScreen";
-import { LoginScreen} from '../../navigation/index'
+
 
 
 const Stack = createNativeStackNavigator();

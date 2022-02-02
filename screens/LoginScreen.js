@@ -6,7 +6,6 @@ import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
 import { AuthContext } from '../navigation/AuthProvider';
 
-
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -45,21 +44,20 @@ const LoginScreen = ({navigation}) => {
        <FormButton
        buttonTitle="Acessar"
        onPress={() => login(email, password)}
-       
        />
-
+       
        <TouchableOpacity 
        style={styles.btnForgoPassWord} >
          <Text style={styles.ForgoText}>Esqueci a Senha</Text>
        </TouchableOpacity>
 
-       <SocialButton
+      {/*  <SocialButton
             buttonTitle="Logar com o Email"
             btnType=""
             color="#4867aa"
             backgroundColor="#e6eaf4"
             onPress={() => {}}  
-          />
+          /> */}
         
        <TouchableOpacity 
        style={styles.btnForgoPassWord}  onPress={() => navigation.navigate('Signup')}>
@@ -79,7 +77,6 @@ flex:1,
 alignItems: "center",
 justifyContent: "center",
 backgroundColor: "#CCFCFC",
-
 },
 containerLogo:{
 flex:1,
@@ -95,7 +92,7 @@ flex:1,
 alignItems: "center",
 justifyContent: "center",
 width: "90%",
-paddingBottom: 50,//////////////////////////
+paddingBottom: 120,//////////////////////////
 },
 input:{
 backgroundColor: "#FFF",
@@ -105,18 +102,6 @@ fontSize: 17,
 borderRadius: 7,
 padding: 10,
 height: 45,
-},
-btnSubmit:{
-backgroundColor: "#35AAFF",
-width: "90%",
-height: 45,
-alignItems: "center",
-justifyContent: "center",
-borderRadius: 7
-},
-submitText:{
-color: "#FFF",
-fontSize: 18
 },
 btnForgoPassWord:{
 marginTop: 30,

@@ -6,7 +6,6 @@ import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
 import { AuthContext } from '../navigation/AuthProvider';
 
-
 const SignupScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -16,7 +15,6 @@ const SignupScreen = ({navigation}) => {
 
   return(
   <KeyboardAvoidingView style={styles.background} >
-
 
     <View style={styles.container}>
       <FormInput
@@ -48,16 +46,15 @@ const SignupScreen = ({navigation}) => {
        <FormButton
        buttonTitle="Cadastrar"
        onPress={() => register(email, password)}
-       
        />
        
-       <SocialButton
+     {/*   <SocialButton
           buttonTitle="Cadastrar com o Email"
           btnType=""
           color="#4867aa"
           backgroundColor="#e6eaf4"
           onPress={() => {}}
-          />
+          /> */}
           
        <TouchableOpacity 
        style={styles.btnForgoPassWord}  onPress={() => navigation.navigate('Login')}>
@@ -83,7 +80,6 @@ alignItems: "center",
 justifyContent: "center",
 width: "90%",
 paddingBottom: 50
-
 },
 input:{
 backgroundColor: "#FFF",
@@ -94,24 +90,11 @@ fontSize: 17,
 borderRadius: 7,
 padding: 10,
 height: 45,
-
-},
-btnSubmit:{
-backgroundColor: "#7DCFF5",
-width: "90%",
-height: 45,
-alignItems: "center",
-justifyContent: "center",
-borderRadius: 7
-},
-submitText:{
-color: "#FFF",
-fontSize: 18
 },
 btnForgoPassWord:{
-  marginTop: 30,
-  },
-  ForgoText:{
-  color: "#000000"
+marginTop: 30,
+},
+ForgoText:{
+color: "#000000"
   },
 });

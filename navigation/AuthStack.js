@@ -4,8 +4,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SignupScreen from '../screens/SignupScreen';
 import LoginScreen from '../screens/LoginScreen';
 
-
-
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -61,7 +59,6 @@ const AuthStack = () => {
                       onPress={() => navigation.navigate('Login')}
                       />
                   </View>
-
               ),
 
             })} 

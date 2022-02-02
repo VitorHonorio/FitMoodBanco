@@ -2,7 +2,6 @@ import React from 'react';
 import { Text,TouchableOpacity, StyleSheet} from 'react-native';
 import {windowHeight, windowWidth} from '../utils/Dimentions';
 
-import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const FormButton = ({buttonTitle, ...rest}) => {
     return (
