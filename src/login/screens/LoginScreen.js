@@ -16,7 +16,7 @@ const LoginScreen = ({navigation}) => {
   <KeyboardAvoidingView style={styles.background} >
   <View style={styles.containerLogo}>
     <Image
-    source={require("../assets/logo.png")}
+    source={require("../../assets/imagens/logo.png")}
     style={styles.Logo}
     />
     </View>

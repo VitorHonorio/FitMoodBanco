@@ -3,7 +3,7 @@ import { SafeAreaView, View, Text, TouchableOpacity, Image} from 'react-native';
 import { useTranslation } from 'react-i18next';
 import EmoticonIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import Estilo from '../components/Estilo';
-import {AuthContext} from '../../navigation/AuthProvider'
+import {AuthContext} from '../login/navigation/AuthProvider'
 
 
 export function MainScreen({ navigation }) {
