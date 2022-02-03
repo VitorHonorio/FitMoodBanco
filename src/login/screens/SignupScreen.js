@@ -5,6 +5,7 @@ import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
 import { AuthContext } from '../navigation/AuthProvider';
+import { useTranslation } from 'react-i18next';
 
 const SignupScreen = ({navigation}) => {
   const [email, setEmail] = useState();
@@ -12,6 +13,7 @@ const SignupScreen = ({navigation}) => {
   const [confirmPassword, setConfirmPassword] = useState();
 
   const {register} = useContext(AuthContext);
+  const {t} = useTranslation()
 
   return(
   <KeyboardAvoidingView style={styles.background} >
@@ -21,7 +23,7 @@ const SignupScreen = ({navigation}) => {
       style={styles.input}
       labelValue={email}
       onChangeText={(userEmail) => setEmail(userEmail)}
-      placeholderText="Email"   
+      placeholderText={t("Email")}    
       keyboardType="email-address"
       autoCapitalize='none'
       autoCorrect={false}
@@ -31,7 +33,7 @@ const SignupScreen = ({navigation}) => {
        labelValue={password}
        onChangeText={(userPassword) => setPassword(userPassword)}
        style={styles.input}
-       placeholderText="Senha"
+       placeholderText={t("Senha")} 
        secureTextEntry={true}
        />
 
@@ -39,12 +41,12 @@ const SignupScreen = ({navigation}) => {
        labelValue={confirmPassword}
        onChangeText={(userPassword) => setConfirmPassword(userPassword)}
        style={styles.input}
-       placeholderText="Confirmar Senha"
+       placeholderText={t("Confirmar senha")} 
        secureTextEntry={true}
        />
        
        <FormButton
-       buttonTitle="Cadastrar"
+       buttonTitle={t("Cadastrar")}
        onPress={() => register(email, password)}
        />
        
@@ -58,7 +60,7 @@ const SignupScreen = ({navigation}) => {
           
        <TouchableOpacity 
        style={styles.btnForgoPassWord}  onPress={() => navigation.navigate('Login')}>
-         <Text style={styles.ForgoText}>Já tem uma conta? Clique aqui!!</Text>
+         <Text style={styles.ForgoText}>{t("Voltar tela de login")}</Text>
        </TouchableOpacity>
       </View>
 </KeyboardAvoidingView>

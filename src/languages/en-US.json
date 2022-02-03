@@ -11,6 +11,15 @@
         "FeedbackNegativo": "Can we help you with something? Send us a message by clicking bellow, or go back to the main screen.",
         "FeedbackRecebido": "We received the following feedback:",
         "Placeholder": "Type your message",
-        "ArchiveScreen": "Saved feedback:"
+        "ArchiveScreen": "Saved feedback:",
+        "Email": "Email",
+        "Senha": "Password",
+        "Confirmar senha": "Confirm password",
+        "Acessar": "Access",
+        "Cadastrar": "Register",
+        "Esqueci a Senha": "I forgot the password",
+        "Criar conta":"Not have an account yet? click here",
+        "Voltar tela de login": "Already have an account? Click here"
+       
     }
 }

@@ -11,6 +11,16 @@
         "FeedbackNegativo": "Podemos te ajudar em algo? Nos envie uma mensagem clicando abaixo, ou volte para a tela principal.",
         "FeedbackRecebido": "Recebemos o seguinte feedback:",
         "Placeholder": "Digite sua mensagem.",
-        "ArchiveScreen": "Feedback salvo:"
+        "ArchiveScreen": "Feedback salvo:",
+        "Email": "Email",
+        "Senha": "Senha",
+        "Confirmar senha": "Confirmar senha",
+        "Acessar": "Acessar",
+        "Cadastrar": "Cadastrar",
+        "Esqueci a Senha": "Esqueci a Senha",
+        "Criar conta": "Ainda não tem uma conta? Click aqui",
+        "Voltar tela de login": "Ainda não tem uma conta? Click aqui"
+
+
     }
 }

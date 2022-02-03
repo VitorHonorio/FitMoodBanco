@@ -5,12 +5,14 @@ import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
 import SocialButton from '../components/SocialButton';
 import { AuthContext } from '../navigation/AuthProvider';
+import { useTranslation } from 'react-i18next';
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   const {login} = useContext(AuthContext);
+  const {t} = useTranslation()
 
   return(
   <KeyboardAvoidingView style={styles.background} >
@@ -26,7 +28,7 @@ const LoginScreen = ({navigation}) => {
       style={styles.input}
       labelValue={email}
       onChangeText={(userEmail) => setEmail(userEmail)}
-      placeholderText="Email"   
+      placeholderText={t("Email")}  
       keyboardType="email-address"
       autoCapitalize="none"
       autoCorrect={false}
@@ -36,19 +38,19 @@ const LoginScreen = ({navigation}) => {
        labelValue={password}
        onChangeText={(userPassword) => setPassword(userPassword)}
        style={styles.input}
-       placeholderText="Senha"
+       placeholderText={t("Senha")} 
        secureTextEntry={true}
        autoCorrect={false}
        />
        
        <FormButton
-       buttonTitle="Acessar"
+       buttonTitle={t("Acessar")}
        onPress={() => login(email, password)}
        />
        
        <TouchableOpacity 
        style={styles.btnForgoPassWord} >
-         <Text style={styles.ForgoText}>Esqueci a Senha</Text>
+         <Text style={styles.ForgoText}>{t("Esqueci a Senha")}</Text>
        </TouchableOpacity>
 
       {/*  <SocialButton
@@ -61,7 +63,7 @@ const LoginScreen = ({navigation}) => {
         
        <TouchableOpacity 
        style={styles.btnForgoPassWord}  onPress={() => navigation.navigate('Signup')}>
-         <Text style={styles.ForgoText}>Ainda não tem uma conta? Click aqui</Text>
+         <Text style={styles.ForgoText}>{t("Criar conta")}</Text>
        </TouchableOpacity>
 
       </View>
