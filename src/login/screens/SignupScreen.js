@@ -16,87 +16,85 @@ const SignupScreen = ({navigation}) => {
   const {t} = useTranslation()
 
   return(
-  <KeyboardAvoidingView style={styles.background} >
-
     <View style={styles.container}>
-      <FormInput
-      style={styles.input}
+    <Text style={styles.text}>Create an account</Text>
+
+    <FormInput
       labelValue={email}
       onChangeText={(userEmail) => setEmail(userEmail)}
-      placeholderText={t("Email")}    
+      placeholderText="Email"
+      iconType="user"
       keyboardType="email-address"
-      autoCapitalize='none'
+      autoCapitalize="none"
       autoCorrect={false}
-      />
+    />
 
-       <FormInput
-       labelValue={password}
-       onChangeText={(userPassword) => setPassword(userPassword)}
-       style={styles.input}
-       placeholderText={t("Senha")} 
-       secureTextEntry={true}
-       />
+    <FormInput
+      labelValue={password}
+      onChangeText={(userPassword) => setPassword(userPassword)}
+      placeholderText="Password"
+      iconType="lock"
+      secureTextEntry={true}
+    />
 
-         <FormInput
-       labelValue={confirmPassword}
-       onChangeText={(userPassword) => setConfirmPassword(userPassword)}
-       style={styles.input}
-       placeholderText={t("Confirmar senha")} 
-       secureTextEntry={true}
-       />
-       
-       <FormButton
-       buttonTitle={t("Cadastrar")}
-       onPress={() => register(email, password)}
-       />
-       
-     {/*   <SocialButton
-          buttonTitle="Cadastrar com o Email"
-          btnType=""
-          color="#4867aa"
-          backgroundColor="#e6eaf4"
+    <FormInput
+      labelValue={confirmPassword}
+      onChangeText={(userPassword) => setConfirmPassword(userPassword)}
+      placeholderText="Confirm Password"
+      iconType="lock"
+      secureTextEntry={true}
+    />
+
+    <FormButton
+      buttonTitle="Sign Up"
+      onPress={() => register(email, password)}
+    />
+    
+       {/*<View>
+        
+        <SocialButton
+          buttonTitle="Sign Up with Google"
+          btnType="google"
+          color="#de4d41"
+          backgroundColor="#f5e7ea"
           onPress={() => {}}
-          /> */}
-          
-       <TouchableOpacity 
-       style={styles.btnForgoPassWord}  onPress={() => navigation.navigate('Login')}>
-         <Text style={styles.ForgoText}>{t("Voltar tela de login")}</Text>
-       </TouchableOpacity>
-      </View>
-</KeyboardAvoidingView>
+        />
+      </View> */}
+
+    <TouchableOpacity
+      style={styles.navButton}
+      onPress={() => navigation.navigate('Login')}>
+      <Text style={styles.navButtonText}>Have an account? Sign In</Text>
+    </TouchableOpacity>
+  </View>
 );
-}
+};
 
 export default SignupScreen;
 
 const styles = StyleSheet.create({
-background:{
-flex:1,
-alignItems: "center",
-justifyContent: "center",
-backgroundColor: "#CCFCFC",
+container: {
+  backgroundColor: '#CCFCFC',
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: 20,
 },
-container:{
-flex:1,
-alignItems: "center",
-justifyContent: "center",
-width: "90%",
-paddingBottom: 50
+text: {
+  fontFamily: 'Kufam-SemiBoldItalic',
+  fontSize: 28,
+  marginBottom: 10,
+  color: '#051d5f',
 },
-input:{
-backgroundColor: "#FFF",
-width: "100%",
-marginBottom:15,
-color: "#222",
-fontSize: 17,
-borderRadius: 7,
-padding: 10,
-height: 45,
+navButton: {
+  marginTop: 15,
 },
-btnForgoPassWord:{
-marginTop: 30,
+navButtonText: {
+  fontSize: 18,
+  fontWeight: '500',
+  color: '#2e64e5',
+  fontFamily: 'Lato-Regular',
 },
-ForgoText:{
-color: "#000000"
-  },
+
+
 });

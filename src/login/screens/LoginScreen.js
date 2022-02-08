@@ -23,25 +23,24 @@ const LoginScreen = ({navigation}) => {
     />
     </View>
 
-    <View style={styles.container}>
+    
       <FormInput
-      style={styles.input}
       labelValue={email}
-      onChangeText={(userEmail) => setEmail(userEmail)}
-      placeholderText={t("Email")}  
-      keyboardType="email-address"
-      autoCapitalize="none"
-      autoCorrect={false}
+        onChangeText={(userEmail) => setEmail(userEmail)}
+        placeholderText="Email"
+        iconType="user"
+        keyboardType="email-address"
+        autoCapitalize="none"
+        autoCorrect={false}
       />
 
        <FormInput
-       labelValue={password}
-       onChangeText={(userPassword) => setPassword(userPassword)}
-       style={styles.input}
-       placeholderText={t("Senha")} 
-       secureTextEntry={true}
-       autoCorrect={false}
-       />
+        labelValue={password}
+        onChangeText={(userPassword) => setPassword(userPassword)}
+        placeholderText="Password"
+        iconType="lock"
+        secureTextEntry={true}
+      />
        
        <FormButton
        buttonTitle={t("Acessar")}
@@ -65,8 +64,13 @@ const LoginScreen = ({navigation}) => {
        style={styles.btnForgoPassWord}  onPress={() => navigation.navigate('Signup')}>
          <Text style={styles.ForgoText}>{t("Criar conta")}</Text>
        </TouchableOpacity>
+       <View/>
+         
+       
+         
+       
 
-      </View>
+ 
 </KeyboardAvoidingView>
 );
 }
@@ -89,22 +93,7 @@ Logo:{
   width: 350,
   resizeMode:'contain',
 },
-container:{
-flex:1,
-alignItems: "center",
-justifyContent: "center",
-width: "90%",
-paddingBottom: 120,//////////////////////////
-},
-input:{
-backgroundColor: "#FFF",
-width: "100%",
-marginBottom:0,
-fontSize: 17,
-borderRadius: 7,
-padding: 10,
-height: 45,
-},
+
 btnForgoPassWord:{
 marginTop: 30,
 },
