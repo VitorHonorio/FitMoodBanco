@@ -17,12 +17,11 @@ const SignupScreen = ({navigation}) => {
 
   return(
     <View style={styles.container}>
-    <Text style={styles.text}>Create an account</Text>
-
+   
     <FormInput
       labelValue={email}
       onChangeText={(userEmail) => setEmail(userEmail)}
-      placeholderText="Email"
+      placeholderText={t("Email")}
       iconType="user"
       keyboardType="email-address"
       autoCapitalize="none"
@@ -32,7 +31,7 @@ const SignupScreen = ({navigation}) => {
     <FormInput
       labelValue={password}
       onChangeText={(userPassword) => setPassword(userPassword)}
-      placeholderText="Password"
+      placeholderText={t("Senha")}
       iconType="lock"
       secureTextEntry={true}
     />
@@ -40,13 +39,13 @@ const SignupScreen = ({navigation}) => {
     <FormInput
       labelValue={confirmPassword}
       onChangeText={(userPassword) => setConfirmPassword(userPassword)}
-      placeholderText="Confirm Password"
+      placeholderText={t("Confirmar senha")}
       iconType="lock"
       secureTextEntry={true}
     />
 
     <FormButton
-      buttonTitle="Sign Up"
+      buttonTitle={t("Cadastrar")}
       onPress={() => register(email, password)}
     />
     
@@ -64,7 +63,7 @@ const SignupScreen = ({navigation}) => {
     <TouchableOpacity
       style={styles.navButton}
       onPress={() => navigation.navigate('Login')}>
-      <Text style={styles.navButtonText}>Have an account? Sign In</Text>
+      <Text style={styles.navButtonText}> {t("Voltar tela de login")}</Text>
     </TouchableOpacity>
   </View>
 );
@@ -90,11 +89,9 @@ navButton: {
   marginTop: 15,
 },
 navButtonText: {
-  fontSize: 18,
+  fontSize: 15,
   fontWeight: '500',
-  color: '#2e64e5',
+  color: '#000000',
   fontFamily: 'Lato-Regular',
 },
-
-
 });

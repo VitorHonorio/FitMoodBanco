@@ -22,12 +22,10 @@ const LoginScreen = ({navigation}) => {
     style={styles.Logo}
     />
     </View>
-
-    
       <FormInput
-      labelValue={email}
+        labelValue={email}
         onChangeText={(userEmail) => setEmail(userEmail)}
-        placeholderText="Email"
+        placeholderText={t("Email")}
         iconType="user"
         keyboardType="email-address"
         autoCapitalize="none"
@@ -35,16 +33,16 @@ const LoginScreen = ({navigation}) => {
       />
 
        <FormInput
-        labelValue={password}
-        onChangeText={(userPassword) => setPassword(userPassword)}
-        placeholderText="Password"
-        iconType="lock"
-        secureTextEntry={true}
+         labelValue={password}
+         onChangeText={(userPassword) => setPassword(userPassword)}
+         placeholderText={t("Senha")}
+         iconType="lock"
+         secureTextEntry={true}
       />
        
        <FormButton
-       buttonTitle={t("Acessar")}
-       onPress={() => login(email, password)}
+         buttonTitle={t("Acessar")}
+         onPress={() => login(email, password)}
        />
        
        <TouchableOpacity 
@@ -65,12 +63,8 @@ const LoginScreen = ({navigation}) => {
          <Text style={styles.ForgoText}>{t("Criar conta")}</Text>
        </TouchableOpacity>
        <View/>
-         
        
-         
-       
-
- 
+       <Text></Text>
 </KeyboardAvoidingView>
 );
 }
@@ -84,10 +78,12 @@ alignItems: "center",
 justifyContent: "center",
 backgroundColor: "#CCFCFC",
 },
+
 containerLogo:{
 flex:1,
 justifyContent: "center",
 },
+
 Logo:{
   flex: 1,
   width: 350,
@@ -95,8 +91,9 @@ Logo:{
 },
 
 btnForgoPassWord:{
-marginTop: 30,
+marginTop: 20,
 },
+
 ForgoText:{
 color: "#000000"
 },
