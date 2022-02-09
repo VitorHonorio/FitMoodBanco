@@ -14,7 +14,8 @@ const SignupScreen = ({navigation}) => {
 
   const {register} = useContext(AuthContext);
   const {t} = useTranslation()
-
+  
+ 
   return(
     <View style={styles.container}>
    
@@ -36,15 +37,9 @@ const SignupScreen = ({navigation}) => {
       secureTextEntry={true}
     />
 
-    <FormInput
-      labelValue={confirmPassword}
-      onChangeText={(userPassword) => setConfirmPassword(userPassword)}
-      placeholderText={t("Confirmar senha")}
-      iconType="lock"
-      secureTextEntry={true}
-    />
+   
 
-    <FormButton
+    <FormButton 
       buttonTitle={t("Cadastrar")}
       onPress={() => register(email, password)}
     />
