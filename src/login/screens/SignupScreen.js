@@ -14,7 +14,19 @@ const SignupScreen = ({navigation}) => {
 
   const {register} = useContext(AuthContext);
   const {t} = useTranslation()
-  
+
+  function validateEmail(email) {
+    const expression = /(\W|^)[\w.\-]{0,25}@(fitec)\.org.br$/
+    return expression.test(String(email).toLowerCase())
+  }
+
+  const salvar = () => {
+    if (validateEmail(email)) {
+      register(email, password)
+    } else {
+      alert ("Digite um email válido")
+    }
+  }
  
   return(
     <View style={styles.container}>
@@ -37,15 +49,12 @@ const SignupScreen = ({navigation}) => {
       secureTextEntry={true}
     />
 
-   
-
-    <FormButton 
-      buttonTitle={t("Cadastrar")}
-      onPress={() => register(email, password)}
-    />
+<FormButton
+buttonTitle={t("Cadastrar")}
+onPress={() => salvar()}
+/>
     
        {/*<View>
-        
         <SocialButton
           buttonTitle="Sign Up with Google"
           btnType="google"

@@ -1,5 +1,5 @@
-import React, {useContext, useState} from 'react';
-import {View, Text, TouchableOpacity, KeyboardAvoidingView, TextInput, Image, Platform, StyleSheet, ScrollView} from 'react-native';
+import React, { useContext, useState } from 'react';
+import { View, Text, TouchableOpacity, KeyboardAvoidingView, TextInput, Image, Platform, StyleSheet, ScrollView } from 'react-native';
 
 import FormInput from '../components/FormInput';
 import FormButton from '../components/FormButton';
@@ -7,21 +7,34 @@ import SocialButton from '../components/SocialButton';
 import { AuthContext } from '../navigation/AuthProvider';
 import { useTranslation } from 'react-i18next';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const { login } = useContext(AuthContext);
+  
+  const { t } = useTranslation()
 
-  const {login} = useContext(AuthContext);
-  const {t} = useTranslation()
+  function validateEmail(email) {
+    const expression = /(\W|^)[\w.\-]{0,25}@(fitec)\.org.br$/
+    return expression.test(String(email).toLowerCase())
+  }
 
-  return(
-  <KeyboardAvoidingView style={styles.background} >
-  <View style={styles.containerLogo}>
-    <Image
-    source={require("../../assets/imagens/logo.png")}
-    style={styles.Logo}
-    />
-    </View>
+  const salvar = () => {
+    if (validateEmail(email)) {
+      login(email, password)
+    } else {
+      alert("Digite um email válido")
+    }
+  }
+
+  return (
+    <KeyboardAvoidingView style={styles.background} >
+      <View style={styles.containerLogo}>
+        <Image
+          source={require("../../assets/imagens/logo.png")}
+          style={styles.Logo}
+        />
+      </View>
       <FormInput
         labelValue={email}
         onChangeText={(userEmail) => setEmail(userEmail)}
@@ -32,23 +45,23 @@ const LoginScreen = ({navigation}) => {
         autoCorrect={false}
       />
 
-       <FormInput
-         labelValue={password}
-         onChangeText={(userPassword) => setPassword(userPassword)}
-         placeholderText={t("Senha")}
-         iconType="lock"
-         secureTextEntry={true}
+      <FormInput
+        labelValue={password}
+        onChangeText={(userPassword) => setPassword(userPassword)}
+        placeholderText={t("Senha")}
+        iconType="lock"
+        secureTextEntry={true}
       />
-       
-       <FormButton
-         buttonTitle={t("Acessar")}
-         onPress={() => login(email, password)}
-       />
-       
-       <TouchableOpacity 
-       style={styles.btnForgoPassWord} >
-         <Text style={styles.ForgoText}>{t("Esqueci a Senha")}</Text>
-       </TouchableOpacity>
+
+      <FormButton
+        buttonTitle={t("Acessar")}
+        onPress={() => salvar()}
+      />
+
+      <TouchableOpacity
+        style={styles.btnForgoPassWord} >
+        <Text style={styles.ForgoText}>{t("Esqueci a Senha")}</Text>
+      </TouchableOpacity>
 
       {/*  <SocialButton
             buttonTitle="Logar com o Email"
@@ -57,44 +70,45 @@ const LoginScreen = ({navigation}) => {
             backgroundColor="#e6eaf4"
             onPress={() => {}}  
           /> */}
-        
-       <TouchableOpacity 
-       style={styles.btnForgoPassWord}  onPress={() => navigation.navigate('Signup')}>
-         <Text style={styles.ForgoText}>{t("Criar conta")}</Text>
-       </TouchableOpacity>
-       <View/>
-       
-       <Text></Text>
-</KeyboardAvoidingView>
-);
+
+      <TouchableOpacity
+        style={styles.btnForgoPassWord} onPress={() => navigation.navigate('Signup')}>
+        <Text style={styles.ForgoText}>{t("Criar conta")}</Text>
+      </TouchableOpacity>
+      <View />
+
+      <Text></Text>
+    </KeyboardAvoidingView>
+  );
 }
 
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-background:{
-flex:1,
-alignItems: "center",
-justifyContent: "center",
-backgroundColor: "#CCFCFC",
-},
+  background: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#CCFCFC",
+  },
 
-containerLogo:{
-flex:1,
-justifyContent: "center",
-},
+  containerLogo: {
+    flex: 0.5,
+    justifyContent: "center",
+  },
 
-Logo:{
-  flex: 1,
-  width: 350,
-  resizeMode:'contain',
-},
+  Logo: {
+    flex: 1,
+    width: 350,
+    resizeMode: 'contain',
+  },
 
-btnForgoPassWord:{
-marginTop: 20,
-},
+  btnForgoPassWord: {
+    marginTop: 20,
+  },
 
-ForgoText:{
-color: "#000000"
-},
+  ForgoText: {
+    color: "#000000",
+    
+  },
 });
